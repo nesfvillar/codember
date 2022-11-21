@@ -6,7 +6,20 @@
 def main():
     with open('input.txt', 'r') as f:
         words_encrypted = f.read().split()
-    print(words_encrypted)
+
+    result = ""
+    for word in words_encrypted:
+        letters = []
+        i, j = 0, 1
+        while j <= len(word):
+            cur_val = chr(int(word[i:j]))
+            if cur_val.isalnum():
+                letters.append(cur_val)
+                i, j = j, j + 1
+            else:
+                j += 1
+        result = result + ' ' + ''.join(letters)
+    print(result)
 
 
 if __name__ == '__main__':
