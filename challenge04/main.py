@@ -1,0 +1,1 @@
+passwords=[p for p in map(lambda number: number if len(str(number)) == 5 and sum((1 if int(x) == 5 else 0 for x in str(number))) >= 2 and all((x <= y for x, y in zip(str(number), str(number)[1:]))) else None, range(11098, 98123)) if p];print(f"{len(passwords)}-{passwords[55]}")
